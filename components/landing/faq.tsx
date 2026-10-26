@@ -3,22 +3,33 @@
 import { ChevronDown } from 'lucide-react'
 import { useId, useState } from 'react'
 import { cn } from '@/lib/utils'
+import { ProcessDecor } from './decor'
 import { SectionHeading } from './ui'
 
 const faqs = [
   {
-    question: 'Preciso ter equipamento ou experiência com gravação?',
+    question: 'A LotePlay vai até o meu negócio?',
     answer:
-      'Não. A LotePlay vai até o seu negócio e cuida da captação, da edição e da organização do conteúdo. Você só precisa estar disponível no dia da visita.',
-  },
-  {
-    question: 'Em quanto tempo recebo os conteúdos?',
-    answer: 'A entrega é feita em até 5 dias úteis em todos os planos.',
+      'Sim. A captação é presencial: a equipe vai até o seu espaço, grava o conteúdo no local e cuida da edição. Você não precisa ter equipamento nem experiência com gravação.',
   },
   {
     question: 'Como funciona o agendamento das visitas?',
     answer:
-      'As visitas são agendadas com 3 dias úteis de antecedência. A duração depende do plano: até 2h no Essencial, até 3h no Performance e 2 visitas de até 3h cada no Dominância.',
+      'As visitas são agendadas com 3 dias úteis de antecedência, de acordo com a disponibilidade da agenda. A duração depende do plano: 1 visita de até 2h no Presença, 1 visita de até 3h no Destaque e 2 visitas de até 3h cada no Referência.',
+  },
+  {
+    question: 'Quais regiões são atendidas?',
+    answer:
+      'Atendemos principalmente Mogi das Cruzes. Regiões próximas podem ser avaliadas individualmente conforme localização e disponibilidade de agenda. O atendimento funciona de segunda a sexta, das 11h às 16h.',
+  },
+  {
+    question: 'Como funciona o Reels demonstrativo gratuito?',
+    answer:
+      'É um Reels demonstrativo presencial gratuito, mediante seleção, região atendida e disponibilidade de agenda. A oferta não é automática para todos: depende de seleção, de o negócio estar em Mogi das Cruzes (ou de análise individual para regiões próximas) e da agenda da equipe. O cliente selecionado deverá publicar 1 Reels e 1 Story mencionando que conheceu e utilizou a LotePlay.',
+  },
+  {
+    question: 'Em quanto tempo recebo os conteúdos?',
+    answer: 'A entrega é feita em até 5 dias úteis em todos os planos.',
   },
   {
     question: 'Posso pedir alterações nos vídeos?',
@@ -26,27 +37,17 @@ const faqs = [
   },
   {
     question: 'Recebo os arquivos brutos das gravações?',
-    answer: 'Não. Os arquivos brutos não estão inclusos nos planos. Você recebe os conteúdos editados e prontos.',
+    answer: 'Não. Os arquivos brutos não estão inclusos nos planos. Você recebe os conteúdos editados e prontos para publicar.',
   },
   {
     question: 'Quem cria as ideias e os roteiros?',
     answer:
-      'No Essencial, o conteúdo é baseado nos tópicos que você nos passa. No Performance, ajudamos a estruturar os tópicos. No Dominância, a LotePlay cria os roteiros completos.',
+      'No Presença, o conteúdo é baseado nos tópicos que você nos passa. No Destaque, ajudamos a estruturar os tópicos. No Referência, a LotePlay cria os roteiros completos.',
   },
   {
-    question: 'Como funciona o Reels gratuito?',
+    question: 'Como funciona o programa de indicação?',
     answer:
-      'Na oferta de lançamento, produzimos 1 Reels gratuito para sua empresa. Em troca, você publica 1 Reels e 1 Story dizendo que conheceu e utilizou a LotePlay.',
-  },
-  {
-    question: 'O desconto da indicação pode virar dinheiro?',
-    answer:
-      'Não. Cada cliente indicado que contratar um plano gera 15% de desconto em uma mensalidade, e o benefício não pode ser convertido em dinheiro.',
-  },
-  {
-    question: 'Quais regiões vocês atendem e qual o horário de atendimento?',
-    answer:
-      'Atendemos negócios locais de Mogi das Cruzes. Nosso atendimento funciona de segunda a sexta, das 11h às 16h.',
+      'Você indica a LotePlay, a pessoa indicada entra em contato diretamente e informa quem fez a indicação. Após a contratação e o pagamento da primeira mensalidade, você recebe 15% de desconto na próxima mensalidade. Leads prospectados pela própria LotePlay não participam, e o desconto não pode ser convertido em dinheiro.',
   },
 ]
 
@@ -55,8 +56,10 @@ export function Faq() {
   const baseId = useId()
 
   return (
-    <section id="faq" className="bg-muted py-20 sm:py-24">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+    <section id="faq" className="relative bg-muted py-20 sm:py-24">
+      <ProcessDecor side="left" />
+      <ProcessDecor side="right" className="top-2/3" />
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeading eyebrow="Dúvidas frequentes" title="Perguntas frequentes" />
         <ul className="mt-12 grid gap-3">
           {faqs.map((faq, index) => {

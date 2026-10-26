@@ -9,7 +9,9 @@ export const site = {
 
 export const whatsappMessages = {
   default: 'Olá, LotePlay! Vim pelo site e quero saber mais sobre os planos de conteúdo.',
-  freeReels: 'Olá, LotePlay! Vim pelo site e quero meu Reels gratuito da oferta de lançamento.',
+  availability: 'Olá, LotePlay! Vim pelo site e quero consultar a disponibilidade de visita para o meu negócio.',
+  demoReels:
+    'Olá, LotePlay! Vim pelo site e quero consultar a disponibilidade do Reels demonstrativo gratuito para o meu negócio.',
   referral: 'Olá, LotePlay! Fui indicado(a) por: ',
 } as const
 
@@ -23,6 +25,7 @@ export function planMessage(planName: string) {
 
 export const navLinks = [
   { href: '#como-funciona', label: 'Como funciona' },
+  { href: '#segmentos', label: 'Segmentos' },
   { href: '#servicos', label: 'Serviços' },
   { href: '#planos', label: 'Planos' },
   { href: '#indique', label: 'Indique e ganhe' },

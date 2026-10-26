@@ -1,4 +1,3 @@
-import { Benefits } from '@/components/landing/benefits'
 import { Faq } from '@/components/landing/faq'
 import { FinalCta } from '@/components/landing/final-cta'
 import { Footer } from '@/components/landing/footer'
@@ -8,6 +7,7 @@ import { HowItWorks } from '@/components/landing/how-it-works'
 import { Offer } from '@/components/landing/offer'
 import { Plans } from '@/components/landing/plans'
 import { Referral } from '@/components/landing/referral'
+import { Segments } from '@/components/landing/segments'
 import { Services } from '@/components/landing/services'
 
 export default function Page() {
@@ -17,11 +17,11 @@ export default function Page() {
       <main>
         <Hero />
         <HowItWorks />
+        <Segments />
         <Services />
-        <Benefits />
         <Plans />
-        <Referral />
         <Offer />
+        <Referral />
         <Faq />
         <FinalCta />
       </main>

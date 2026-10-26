@@ -21,7 +21,8 @@ export function Footer() {
         <div>
           <Logo inverted />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-blue-100/75">
-            Reels, Stories e fotos profissionais para negócios locais de Mogi das Cruzes.
+            Você faz seu negócio acontecer. A gente faz ele aparecer. Captação presencial, Reels e Stories para
+            negócios locais de Mogi das Cruzes.
           </p>
         </div>
 

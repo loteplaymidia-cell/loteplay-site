@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { planMessage } from '@/lib/site'
 import { cn } from '@/lib/utils'
+import { SoftShapes } from './decor'
 import { Reveal } from './reveal'
 import { SectionHeading, WhatsAppButton } from './ui'
 
@@ -25,12 +26,13 @@ type Plan = {
   price: string
   icon: LucideIcon
   featured?: boolean
+  dark?: boolean
   features: { icon: LucideIcon; label: string }[]
 }
 
 const plans: Plan[] = [
   {
-    name: 'Essencial',
+    name: 'Presença',
     price: '997',
     icon: Send,
     features: [
@@ -42,27 +44,26 @@ const plans: Plan[] = [
     ],
   },
   {
-    name: 'Performance',
+    name: 'Destaque',
     price: '1.497',
     icon: ChartColumnIncreasing,
     featured: true,
     features: [
       { icon: Clapperboard, label: '15 Reels' },
       { icon: Smartphone, label: '5 Stories' },
-      { icon: Camera, label: '4 conjuntos de fotos, até 15 fotos por conjunto' },
       { icon: CalendarCheck, label: '1 visita de até 3h' },
       { icon: FileText, label: 'Estruturação de tópicos' },
       { icon: Scissors, label: 'Edição de vídeo' },
     ],
   },
   {
-    name: 'Dominância',
+    name: 'Referência',
     price: '2.497',
     icon: Trophy,
+    dark: true,
     features: [
       { icon: Clapperboard, label: '20 Reels' },
       { icon: Smartphone, label: '10 Stories' },
-      { icon: Camera, label: 'Captação de fotos durante as visitas' },
       { icon: CalendarCheck, label: '2 visitas de até 3h cada' },
       { icon: FileText, label: 'Roteiros completos pela LotePlay' },
       { icon: Scissors, label: 'Edição de vídeo' },
@@ -72,15 +73,16 @@ const plans: Plan[] = [
 
 const commonTerms = [
   { icon: Timer, label: 'Entrega em até 5 dias úteis' },
-  { icon: CalendarCheck, label: 'Agendamento com 3 dias úteis' },
+  { icon: CalendarCheck, label: 'Agendamento com 3 dias úteis de antecedência' },
   { icon: SlidersHorizontal, label: '1 rodada de ajustes por conteúdo' },
   { icon: CircleX, label: 'Arquivos brutos não inclusos' },
 ]
 
 export function Plans() {
   return (
-    <section id="planos" className="bg-muted py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="planos" className="relative bg-muted py-20 sm:py-24">
+      <SoftShapes />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Planos"
           title={
@@ -88,8 +90,13 @@ export function Plans() {
               Planos <span className="text-primary">LotePlay</span>
             </>
           }
-          description="Escolha o volume de conteúdo ideal para o momento do seu negócio."
+          description="Escolha o nível de presença digital ideal para o momento do seu negócio."
         />
+        <p className="mx-auto mt-6 flex w-fit items-center gap-2.5 rounded-full border border-primary/20 bg-white px-5 py-2.5 text-center text-sm font-semibold text-navy shadow-sm">
+          <Camera className="size-4 shrink-0 text-primary" aria-hidden="true" />
+          Todos os planos incluem captação presencial e edição.
+          <Scissors className="size-4 shrink-0 text-primary" aria-hidden="true" />
+        </p>
 
         <ul className="mt-12 grid gap-6 lg:grid-cols-3 lg:items-stretch">
           {plans.map((plan, index) => (
@@ -136,7 +143,7 @@ function PlanCard({ plan }: { plan: Plan }) {
           <span
             className={cn(
               'flex size-12 items-center justify-center rounded-2xl',
-              plan.name === 'Dominância' ? 'bg-navy text-white' : 'bg-secondary text-primary',
+              plan.dark ? 'bg-navy text-white' : 'bg-secondary text-primary',
             )}
           >
             <plan.icon className="size-6" aria-hidden="true" />

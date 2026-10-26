@@ -1,4 +1,4 @@
-import { Camera, Clapperboard, FileText, Scissors, Smartphone } from 'lucide-react'
+import { Clapperboard, Lightbulb, MapPin, Scissors, Smartphone } from 'lucide-react'
 import { Reveal } from './reveal'
 import { IconBox, SectionHeading } from './ui'
 
@@ -14,9 +14,9 @@ const services = [
     description: 'Conteúdos rápidos para manter sua marca presente e próxima de quem já te segue.',
   },
   {
-    icon: Camera,
-    title: 'Fotos',
-    description: 'Captação de fotos profissionais do seu espaço, equipe e produtos durante as visitas.',
+    icon: MapPin,
+    title: 'Captação presencial',
+    description: 'A equipe vai até o seu negócio e grava no seu espaço, com o seu produto e a sua rotina.',
   },
   {
     icon: Scissors,
@@ -24,9 +24,9 @@ const services = [
     description: 'Edição de vídeo completa, entregando o conteúdo pronto para publicar.',
   },
   {
-    icon: FileText,
-    title: 'Roteiros',
-    description: 'Estruturação de tópicos e roteiros completos para quem não quer se preocupar com ideias.',
+    icon: Lightbulb,
+    title: 'Ideias e roteiros',
+    description: 'Ajudamos a definir o que mostrar, do roteiro baseado nos seus tópicos até roteiros completos.',
   },
 ]
 
@@ -36,8 +36,8 @@ export function Services() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Serviços"
-          title="Tudo o que o seu Instagram precisa"
-          description="Da ideia à edição final, a LotePlay produz o conteúdo do seu negócio de ponta a ponta."
+          title="Da ideia ao post, sem você precisar parar"
+          description="Tudo o que é preciso para o seu negócio aparecer com constância, feito pela LotePlay de ponta a ponta."
         />
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (

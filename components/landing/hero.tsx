@@ -1,7 +1,8 @@
 import Image from 'next/image'
-import { Gift, MapPin } from 'lucide-react'
-import { whatsappMessages } from '@/lib/site'
+import { MapPin, Video } from 'lucide-react'
 import { WhatsAppButton } from './ui'
+
+const highlights = ['Captação presencial', 'Ideias e roteiros', 'Edição', 'Reels e Stories prontos']
 
 export function Hero() {
   return (
@@ -19,19 +20,18 @@ export function Hero() {
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-sm font-medium text-accent-foreground">
             <MapPin className="size-4" aria-hidden="true" />
-            Negócios locais de Mogi das Cruzes
+            Captação presencial para negócios locais
           </p>
-          <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-navy sm:text-5xl lg:text-6xl">
-            Mais conteúdo em menos tempo para <span className="text-primary">negócios locais</span>
+          <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-navy sm:text-5xl lg:text-6xl">
+            Você faz seu negócio acontecer. <span className="text-primary">A gente faz ele aparecer.</span>
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            A LotePlay cria Reels, Stories e fotos profissionais para a sua empresa. Você não precisa ter
-            equipamento, tempo ou ideias: nós cuidamos da captação, da edição e do roteiro.
+            A LotePlay vai até o seu negócio, capta o conteúdo no local, ajuda com as ideias e entrega Reels e
+            Stories editados, prontos para publicar. Sem perder tempo pensando em pauta, gravando sozinho ou
+            aprendendo edição.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton message={whatsappMessages.freeReels} className="px-7 py-4">
-              Quero meu Reels gratuito
-            </WhatsAppButton>
+            <WhatsAppButton className="px-7 py-4">Quero falar com a LotePlay</WhatsAppButton>
             <a
               href="#planos"
               className="inline-flex items-center justify-center rounded-full border border-border bg-white px-7 py-4 text-sm font-semibold text-navy transition-colors hover:border-primary/40 hover:text-primary sm:text-base"
@@ -39,16 +39,15 @@ export function Hero() {
               Ver planos
             </a>
           </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            <li>Reels</li>
-            <li aria-hidden="true">•</li>
-            <li>Stories</li>
-            <li aria-hidden="true">•</li>
-            <li>Fotos</li>
-            <li aria-hidden="true">•</li>
-            <li>Edição</li>
-            <li aria-hidden="true">•</li>
-            <li>Roteiros</li>
+          <ul className="mt-8 flex flex-wrap gap-2">
+            {highlights.map((item) => (
+              <li
+                key={item}
+                className="rounded-full border border-border bg-white px-3.5 py-1.5 text-sm font-medium text-muted-foreground"
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -65,11 +64,11 @@ export function Hero() {
           </div>
           <div className="absolute -bottom-5 left-4 right-4 flex items-center gap-3 rounded-2xl border border-border bg-white p-4 shadow-xl sm:-left-6 sm:right-auto">
             <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-              <Gift className="size-5" aria-hidden="true" />
+              <Video className="size-5" aria-hidden="true" />
             </span>
             <div>
-              <p className="text-sm font-bold text-navy">Oferta de lançamento</p>
-              <p className="text-sm text-muted-foreground">1 Reels gratuito para sua empresa</p>
+              <p className="text-sm font-bold text-navy">A gente vai até você</p>
+              <p className="text-sm text-muted-foreground">Captação feita no seu próprio espaço</p>
             </div>
           </div>
         </div>

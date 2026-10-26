@@ -11,13 +11,13 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'LotePlay | Reels, Stories e fotos para negócios locais em Mogi das Cruzes',
+  title: 'LotePlay | Você faz seu negócio acontecer. A gente faz ele aparecer.',
   description:
-    'A LotePlay cria Reels, Stories e fotos profissionais para negócios locais de Mogi das Cruzes. Ganhe 1 Reels gratuito na oferta de lançamento.',
+    'A LotePlay vai até o seu negócio em Mogi das Cruzes, capta o conteúdo, ajuda com ideias e roteiros e entrega Reels e Stories prontos para publicar.',
   generator: 'v0.app',
   openGraph: {
-    title: 'LotePlay | Mais conteúdo em menos tempo para negócios locais',
-    description: 'Reels, Stories e fotos profissionais para negócios locais de Mogi das Cruzes.',
+    title: 'LotePlay | Você faz seu negócio acontecer. A gente faz ele aparecer.',
+    description: 'Captação presencial, edição e Reels e Stories prontos para negócios locais de Mogi das Cruzes.',
     images: ['/images/logo-loteplay.png'],
     locale: 'pt_BR',
     type: 'website',

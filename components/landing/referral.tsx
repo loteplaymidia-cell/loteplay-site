@@ -1,23 +1,25 @@
 import { ArrowRight, BadgeCheck, Check, MessageCircle, Share2 } from 'lucide-react'
 import { whatsappMessages } from '@/lib/site'
+import { SoftShapes } from './decor'
 import { Reveal } from './reveal'
 import { IconBox, SectionHeading, WhatsAppButton } from './ui'
 
 const steps = [
   {
     icon: Share2,
-    title: 'Você indica',
-    description: 'Compartilhe o contato da LotePlay com outra empresa.',
+    title: 'Você indica a LotePlay',
+    description: 'Compartilhe o contato da LotePlay com outro negócio que precisa aparecer mais.',
   },
   {
     icon: MessageCircle,
-    title: 'A empresa chama a LotePlay',
-    description: 'O indicado entra em contato diretamente com a LotePlay e informa quem fez a indicação.',
+    title: 'O indicado chama e informa quem indicou',
+    description: 'A pessoa indicada entra em contato diretamente com a LotePlay e diz quem fez a indicação.',
   },
   {
     icon: BadgeCheck,
-    title: 'Ela contrata um plano',
-    description: 'Após o pagamento da primeira mensalidade, você recebe 15% de desconto na próxima mensalidade.',
+    title: 'Contratou e pagou? Você ganha',
+    description:
+      'Após a contratação e o pagamento da primeira mensalidade do indicado, você recebe 15% de desconto na sua próxima mensalidade.',
   },
 ]
 
@@ -30,8 +32,9 @@ const rules = [
 
 export function Referral() {
   return (
-    <section id="indique" className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="indique" className="relative py-20 sm:py-24">
+      <SoftShapes />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Programa de indicação"
           title={
@@ -68,6 +71,14 @@ export function Referral() {
             </li>
           ))}
         </ol>
+
+        <p className="mt-6 flex items-start gap-3 rounded-3xl border-2 border-primary bg-white px-6 py-5 font-semibold text-navy shadow-md shadow-primary/10 sm:items-center">
+          <BadgeCheck className="mt-0.5 size-6 shrink-0 text-primary sm:mt-0" aria-hidden="true" />
+          <span>
+            O desconto é liberado somente depois que o cliente indicado{' '}
+            <span className="text-primary">contratar e pagar a primeira mensalidade.</span>
+          </span>
+        </p>
 
         <p className="mt-6 rounded-3xl bg-secondary px-6 py-5 text-center font-heading text-lg font-bold text-navy">
           Você indica. A empresa chama. Fechou? <span className="text-primary">Você ganha.</span>
